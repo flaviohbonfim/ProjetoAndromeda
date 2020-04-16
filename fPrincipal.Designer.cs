@@ -34,6 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSair = new System.Windows.Forms.Button();
             this.pnlControleAcesso = new System.Windows.Forms.Panel();
             this.btnPermissoes = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
@@ -48,19 +49,19 @@
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.pnlCentro = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.Button();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.pnlCentro = new System.Windows.Forms.Panel();
+            this.dcPrincipal = new ProjetoAndromeda.DragControl();
             this.pnlLateral.SuspendLayout();
             this.pnlControleAcesso.SuspendLayout();
             this.pnlRelatorios.SuspendLayout();
             this.pnlCadastro.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLateral
@@ -131,6 +132,21 @@
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 11;
             this.label1.Text = "Usuário:";
+            // 
+            // btnSair
+            // 
+            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Image = global::ProjetoAndromeda.Properties.Resources.logout32;
+            this.btnSair.Location = new System.Drawing.Point(7, 696);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(32, 32);
+            this.btnSair.TabIndex = 10;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // pnlControleAcesso
             // 
@@ -341,7 +357,7 @@
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.pnlTitulo.Controls.Add(this.btnMaximizar);
-            this.pnlTitulo.Controls.Add(this.pictureBox1);
+            this.pnlTitulo.Controls.Add(this.picLogo);
             this.pnlTitulo.Controls.Add(this.btnMinimizar);
             this.pnlTitulo.Controls.Add(this.lblTitulo);
             this.pnlTitulo.Controls.Add(this.btnFechar);
@@ -350,41 +366,6 @@
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1128, 32);
             this.pnlTitulo.TabIndex = 3;
-            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(166)))), ((int)(((byte)(221)))));
-            this.lblTitulo.Location = new System.Drawing.Point(34, 7);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(63, 16);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Andromeda";
-            // 
-            // pnlCentro
-            // 
-            this.pnlCentro.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlCentro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCentro.Location = new System.Drawing.Point(200, 32);
-            this.pnlCentro.Name = "pnlCentro";
-            this.pnlCentro.Size = new System.Drawing.Size(928, 735);
-            this.pnlCentro.TabIndex = 6;
-            // 
-            // btnSair
-            // 
-            this.btnSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Image = global::ProjetoAndromeda.Properties.Resources.logout32;
-            this.btnSair.Location = new System.Drawing.Point(7, 696);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(32, 32);
-            this.btnSair.TabIndex = 10;
-            this.btnSair.UseVisualStyleBackColor = false;
             // 
             // btnMaximizar
             // 
@@ -401,15 +382,15 @@
             this.btnMaximizar.UseVisualStyleBackColor = false;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
-            // pictureBox1
+            // picLogo
             // 
-            this.pictureBox1.Image = global::ProjetoAndromeda.Properties.Resources.logo24;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.picLogo.Image = global::ProjetoAndromeda.Properties.Resources.logo24;
+            this.picLogo.Location = new System.Drawing.Point(6, 5);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(22, 22);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 2;
+            this.picLogo.TabStop = false;
             // 
             // btnMinimizar
             // 
@@ -426,6 +407,17 @@
             this.btnMinimizar.UseVisualStyleBackColor = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(166)))), ((int)(((byte)(221)))));
+            this.lblTitulo.Location = new System.Drawing.Point(34, 7);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(63, 16);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Andromeda";
+            // 
             // btnFechar
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -439,6 +431,19 @@
             this.btnFechar.TabIndex = 0;
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // pnlCentro
+            // 
+            this.pnlCentro.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlCentro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCentro.Location = new System.Drawing.Point(200, 32);
+            this.pnlCentro.Name = "pnlCentro";
+            this.pnlCentro.Size = new System.Drawing.Size(928, 735);
+            this.pnlCentro.TabIndex = 6;
+            // 
+            // dcPrincipal
+            // 
+            this.dcPrincipal.SelectControl = this.pnlTitulo;
             // 
             // fPrincipal
             // 
@@ -463,7 +468,7 @@
             this.pnlCadastro.ResumeLayout(false);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,7 +477,7 @@
         private System.Windows.Forms.Panel pnlLateral;
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFechar;
@@ -495,6 +500,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private DragControl dcPrincipal;
     }
 }
 

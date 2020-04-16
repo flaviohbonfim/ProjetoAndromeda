@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fLogin));
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlCentro = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lkEsqueciSenha = new System.Windows.Forms.LinkLabel();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.dcCentro = new ProjetoAndromeda.DragControl();
+            this.dcLateral = new ProjetoAndromeda.DragControl();
             this.pnlLateral.SuspendLayout();
-            this.pnlCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlCentro.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLateral
@@ -54,6 +56,16 @@
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(200, 450);
             this.pnlLateral.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::ProjetoAndromeda.Properties.Resources.logo128;
+            this.picLogo.Location = new System.Drawing.Point(31, 121);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(128, 128);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
             // pnlCentro
             // 
@@ -70,7 +82,6 @@
             this.pnlCentro.Name = "pnlCentro";
             this.pnlCentro.Size = new System.Drawing.Size(524, 450);
             this.pnlCentro.TabIndex = 1;
-            this.pnlCentro.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCentro_MouseDown);
             // 
             // lblTitulo
             // 
@@ -95,6 +106,21 @@
             this.lkEsqueciSenha.TabIndex = 16;
             this.lkEsqueciSenha.TabStop = true;
             this.lkEsqueciSenha.Text = "Esqueci a senha";
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFechar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Image = global::ProjetoAndromeda.Properties.Resources.close;
+            this.btnFechar.Location = new System.Drawing.Point(493, 7);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(22, 22);
+            this.btnFechar.TabIndex = 15;
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnEntrar
             // 
@@ -153,30 +179,13 @@
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuário:";
             // 
-            // btnFechar
+            // dcCentro
             // 
-            this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Image = global::ProjetoAndromeda.Properties.Resources.close;
-            this.btnFechar.Location = new System.Drawing.Point(493, 7);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(22, 22);
-            this.btnFechar.TabIndex = 15;
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            this.dcCentro.SelectControl = this.pnlCentro;
             // 
-            // picLogo
+            // dcLateral
             // 
-            this.picLogo.Image = global::ProjetoAndromeda.Properties.Resources.logo128;
-            this.picLogo.Location = new System.Drawing.Point(31, 121);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(128, 128);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
+            this.dcLateral.SelectControl = this.pnlLateral;
             // 
             // fLogin
             // 
@@ -191,9 +200,9 @@
             this.Text = "Andromeda";
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlCentro.ResumeLayout(false);
             this.pnlCentro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,5 +220,7 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.LinkLabel lkEsqueciSenha;
         private System.Windows.Forms.Label lblTitulo;
+        private DragControl dcCentro;
+        private DragControl dcLateral;
     }
 }

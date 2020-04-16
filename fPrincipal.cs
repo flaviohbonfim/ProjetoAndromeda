@@ -13,11 +13,6 @@ namespace ProjetoAndromeda
 {
     public partial class fPrincipal : Form
     {
-        //Drag Form
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         public fPrincipal()
         {
             InitializeComponent();
@@ -89,6 +84,17 @@ namespace ProjetoAndromeda
             esconderSubMenu();
         }
 
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja sair do sistema?", "Sair", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Hide();
+                fLogin login = new fLogin();
+                login.Closed += (s, args) => this.Close();
+                login.Show();
+            }
+        }
+
         protected override void WndProc(ref Message m)
         {
             if (this.WindowState == FormWindowState.Maximized)
@@ -138,16 +144,6 @@ namespace ProjetoAndromeda
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                btnMaximizar.Image = Properties.Resources.up;
-            }
         }
 
         private void fPrincipal_Load(object sender, EventArgs e)
