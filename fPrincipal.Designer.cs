@@ -49,7 +49,6 @@
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btnMaximizar = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.tbcRelatorios = new MetroFramework.Controls.MetroTabControl();
             this.tabControleAcesso = new MetroFramework.Controls.MetroTabPage();
             this.tbcControleAcesso = new MetroFramework.Controls.MetroTabControl();
+            this.btnMaximizar = new System.Windows.Forms.Button();
             this.dcPrincipal = new ProjetoAndromeda.DragControl();
             this.pnlLateral.SuspendLayout();
             this.pnlControleAcesso.SuspendLayout();
@@ -379,21 +379,6 @@
             this.pnlTitulo.Size = new System.Drawing.Size(1128, 32);
             this.pnlTitulo.TabIndex = 3;
             // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = global::ProjetoAndromeda.Properties.Resources.down;
-            this.btnMaximizar.Location = new System.Drawing.Point(1075, 5);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(22, 22);
-            this.btnMaximizar.TabIndex = 3;
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
-            // 
             // picLogo
             // 
             this.picLogo.Image = global::ProjetoAndromeda.Properties.Resources.logo24;
@@ -462,7 +447,7 @@
             this.tbcPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tbcPrincipal.Name = "tbcPrincipal";
-            this.tbcPrincipal.SelectedIndex = 2;
+            this.tbcPrincipal.SelectedIndex = 0;
             this.tbcPrincipal.Size = new System.Drawing.Size(928, 735);
             this.tbcPrincipal.Style = MetroFramework.MetroColorStyle.Black;
             this.tbcPrincipal.TabIndex = 0;
@@ -551,6 +536,21 @@
             this.tbcControleAcesso.TabIndex = 4;
             this.tbcControleAcesso.UseSelectable = true;
             // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Image = global::ProjetoAndromeda.Properties.Resources.down;
+            this.btnMaximizar.Location = new System.Drawing.Point(1075, 5);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(22, 22);
+            this.btnMaximizar.TabIndex = 3;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
+            // 
             // dcPrincipal
             // 
             this.dcPrincipal.SelectControl = this.pnlTitulo;
@@ -571,6 +571,7 @@
             this.Name = "fPrincipal";
             this.Text = "Andromeda";
             this.Load += new System.EventHandler(this.fPrincipal_Load);
+            this.ResizeEnd += new System.EventHandler(this.fPrincipal_ResizeEnd);
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
             this.pnlControleAcesso.ResumeLayout(false);
@@ -596,7 +597,6 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFechar;
-        private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Panel pnlCentro;
         private System.Windows.Forms.Button btnRelatorios;
         private System.Windows.Forms.Panel pnlCadastro;
@@ -623,6 +623,7 @@
         private MetroFramework.Controls.MetroTabControl tbcRelatorios;
         private MetroFramework.Controls.MetroTabPage tabControleAcesso;
         private MetroFramework.Controls.MetroTabControl tbcControleAcesso;
+        private System.Windows.Forms.Button btnMaximizar;
     }
 }
 

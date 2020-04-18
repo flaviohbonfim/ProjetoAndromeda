@@ -73,6 +73,12 @@
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fPadrao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPadrao.Designer.cs">
+      <DependentUpon>fPadrao.cs</DependentUpon>
+    </Compile>
     <Compile Include="fPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPadrao.resx">
+      <DependentUpon>fPadrao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fPrincipal.resx">
       <DependentUpon>fPrincipal.cs</DependentUpon>
