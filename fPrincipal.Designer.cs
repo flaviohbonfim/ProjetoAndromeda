@@ -55,6 +55,13 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFechar = new System.Windows.Forms.Button();
             this.pnlCentro = new System.Windows.Forms.Panel();
+            this.tbcPrincipal = new MetroFramework.Controls.MetroTabControl();
+            this.tabCadastro = new MetroFramework.Controls.MetroTabPage();
+            this.tbcCadastro = new MetroFramework.Controls.MetroTabControl();
+            this.tabRelatorios = new MetroFramework.Controls.MetroTabPage();
+            this.tbcRelatorios = new MetroFramework.Controls.MetroTabControl();
+            this.tabControleAcesso = new MetroFramework.Controls.MetroTabPage();
+            this.tbcControleAcesso = new MetroFramework.Controls.MetroTabControl();
             this.dcPrincipal = new ProjetoAndromeda.DragControl();
             this.pnlLateral.SuspendLayout();
             this.pnlControleAcesso.SuspendLayout();
@@ -62,6 +69,11 @@
             this.pnlCadastro.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlCentro.SuspendLayout();
+            this.tbcPrincipal.SuspendLayout();
+            this.tabCadastro.SuspendLayout();
+            this.tabRelatorios.SuspendLayout();
+            this.tabControleAcesso.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLateral
@@ -373,7 +385,7 @@
             this.btnMaximizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = global::ProjetoAndromeda.Properties.Resources.up;
+            this.btnMaximizar.Image = global::ProjetoAndromeda.Properties.Resources.down;
             this.btnMaximizar.Location = new System.Drawing.Point(1075, 5);
             this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
             this.btnMaximizar.Name = "btnMaximizar";
@@ -434,12 +446,110 @@
             // 
             // pnlCentro
             // 
-            this.pnlCentro.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlCentro.BackColor = System.Drawing.Color.White;
+            this.pnlCentro.Controls.Add(this.tbcPrincipal);
             this.pnlCentro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentro.Location = new System.Drawing.Point(200, 32);
             this.pnlCentro.Name = "pnlCentro";
             this.pnlCentro.Size = new System.Drawing.Size(928, 735);
             this.pnlCentro.TabIndex = 6;
+            // 
+            // tbcPrincipal
+            // 
+            this.tbcPrincipal.Controls.Add(this.tabCadastro);
+            this.tbcPrincipal.Controls.Add(this.tabRelatorios);
+            this.tbcPrincipal.Controls.Add(this.tabControleAcesso);
+            this.tbcPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.tbcPrincipal.Name = "tbcPrincipal";
+            this.tbcPrincipal.SelectedIndex = 2;
+            this.tbcPrincipal.Size = new System.Drawing.Size(928, 735);
+            this.tbcPrincipal.Style = MetroFramework.MetroColorStyle.Black;
+            this.tbcPrincipal.TabIndex = 0;
+            this.tbcPrincipal.UseCustomForeColor = true;
+            this.tbcPrincipal.UseSelectable = true;
+            this.tbcPrincipal.UseStyleColors = true;
+            // 
+            // tabCadastro
+            // 
+            this.tabCadastro.Controls.Add(this.tbcCadastro);
+            this.tabCadastro.HorizontalScrollbarBarColor = true;
+            this.tabCadastro.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabCadastro.HorizontalScrollbarSize = 10;
+            this.tabCadastro.Location = new System.Drawing.Point(4, 38);
+            this.tabCadastro.Name = "tabCadastro";
+            this.tabCadastro.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCadastro.Size = new System.Drawing.Size(920, 693);
+            this.tabCadastro.TabIndex = 0;
+            this.tabCadastro.Text = "Cadastro";
+            this.tabCadastro.VerticalScrollbarBarColor = true;
+            this.tabCadastro.VerticalScrollbarHighlightOnWheel = false;
+            this.tabCadastro.VerticalScrollbarSize = 10;
+            // 
+            // tbcCadastro
+            // 
+            this.tbcCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcCadastro.Location = new System.Drawing.Point(3, 3);
+            this.tbcCadastro.Name = "tbcCadastro";
+            this.tbcCadastro.Size = new System.Drawing.Size(914, 687);
+            this.tbcCadastro.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tbcCadastro.Style = MetroFramework.MetroColorStyle.Black;
+            this.tbcCadastro.TabIndex = 2;
+            this.tbcCadastro.UseSelectable = true;
+            // 
+            // tabRelatorios
+            // 
+            this.tabRelatorios.Controls.Add(this.tbcRelatorios);
+            this.tabRelatorios.HorizontalScrollbarBarColor = true;
+            this.tabRelatorios.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabRelatorios.HorizontalScrollbarSize = 10;
+            this.tabRelatorios.Location = new System.Drawing.Point(4, 38);
+            this.tabRelatorios.Name = "tabRelatorios";
+            this.tabRelatorios.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRelatorios.Size = new System.Drawing.Size(920, 693);
+            this.tabRelatorios.TabIndex = 1;
+            this.tabRelatorios.Text = "Relatórios";
+            this.tabRelatorios.VerticalScrollbarBarColor = true;
+            this.tabRelatorios.VerticalScrollbarHighlightOnWheel = false;
+            this.tabRelatorios.VerticalScrollbarSize = 10;
+            // 
+            // tbcRelatorios
+            // 
+            this.tbcRelatorios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcRelatorios.Location = new System.Drawing.Point(3, 3);
+            this.tbcRelatorios.Name = "tbcRelatorios";
+            this.tbcRelatorios.Size = new System.Drawing.Size(914, 687);
+            this.tbcRelatorios.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tbcRelatorios.Style = MetroFramework.MetroColorStyle.Black;
+            this.tbcRelatorios.TabIndex = 3;
+            this.tbcRelatorios.UseSelectable = true;
+            // 
+            // tabControleAcesso
+            // 
+            this.tabControleAcesso.Controls.Add(this.tbcControleAcesso);
+            this.tabControleAcesso.HorizontalScrollbarBarColor = true;
+            this.tabControleAcesso.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabControleAcesso.HorizontalScrollbarSize = 10;
+            this.tabControleAcesso.Location = new System.Drawing.Point(4, 38);
+            this.tabControleAcesso.Name = "tabControleAcesso";
+            this.tabControleAcesso.Padding = new System.Windows.Forms.Padding(3);
+            this.tabControleAcesso.Size = new System.Drawing.Size(920, 693);
+            this.tabControleAcesso.TabIndex = 2;
+            this.tabControleAcesso.Text = "Controle de Acesso";
+            this.tabControleAcesso.VerticalScrollbarBarColor = true;
+            this.tabControleAcesso.VerticalScrollbarHighlightOnWheel = false;
+            this.tabControleAcesso.VerticalScrollbarSize = 10;
+            // 
+            // tbcControleAcesso
+            // 
+            this.tbcControleAcesso.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcControleAcesso.Location = new System.Drawing.Point(3, 3);
+            this.tbcControleAcesso.Name = "tbcControleAcesso";
+            this.tbcControleAcesso.Size = new System.Drawing.Size(914, 687);
+            this.tbcControleAcesso.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tbcControleAcesso.Style = MetroFramework.MetroColorStyle.Black;
+            this.tbcControleAcesso.TabIndex = 4;
+            this.tbcControleAcesso.UseSelectable = true;
             // 
             // dcPrincipal
             // 
@@ -469,6 +579,11 @@
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlCentro.ResumeLayout(false);
+            this.tbcPrincipal.ResumeLayout(false);
+            this.tabCadastro.ResumeLayout(false);
+            this.tabRelatorios.ResumeLayout(false);
+            this.tabControleAcesso.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -501,6 +616,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private DragControl dcPrincipal;
+        private MetroFramework.Controls.MetroTabControl tbcPrincipal;
+        private MetroFramework.Controls.MetroTabPage tabCadastro;
+        private MetroFramework.Controls.MetroTabControl tbcCadastro;
+        private MetroFramework.Controls.MetroTabPage tabRelatorios;
+        private MetroFramework.Controls.MetroTabControl tbcRelatorios;
+        private MetroFramework.Controls.MetroTabPage tabControleAcesso;
+        private MetroFramework.Controls.MetroTabControl tbcControleAcesso;
     }
 }
 

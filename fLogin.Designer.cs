@@ -69,6 +69,7 @@
             // 
             // pnlCentro
             // 
+            this.pnlCentro.BackColor = System.Drawing.Color.White;
             this.pnlCentro.Controls.Add(this.lblTitulo);
             this.pnlCentro.Controls.Add(this.lkEsqueciSenha);
             this.pnlCentro.Controls.Add(this.btnFechar);
@@ -110,7 +111,7 @@
             // btnFechar
             // 
             this.btnFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFechar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFechar.BackColor = System.Drawing.Color.White;
             this.btnFechar.FlatAppearance.BorderSize = 0;
             this.btnFechar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -149,6 +150,7 @@
             this.txtSenha.Size = new System.Drawing.Size(235, 29);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // txtUsuario
             // 

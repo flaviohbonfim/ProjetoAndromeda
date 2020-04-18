@@ -43,5 +43,13 @@ namespace ProjetoAndromeda
             principal.Closed += (s, args) => this.Close();
             principal.Show();
         }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar.PerformClick();
+            }
+        }
     }
 }

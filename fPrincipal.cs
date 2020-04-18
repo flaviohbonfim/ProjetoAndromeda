@@ -20,6 +20,9 @@ namespace ProjetoAndromeda
             this.DoubleBuffered = true;
             this.ResizeRedraw = true;
             this.Padding = new System.Windows.Forms.Padding(1);
+            tbcPrincipal.TabPages.Remove(tabCadastro);
+            tbcPrincipal.TabPages.Remove(tabRelatorios);
+            tbcPrincipal.TabPages.Remove(tabControleAcesso);
         }
 
         const uint WM_NCHITTEST = 0x0084, WM_MOUSEMOVE = 0x0200,
@@ -52,36 +55,172 @@ namespace ProjetoAndromeda
         private void btnCliente_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
+            if (!tbcPrincipal.Controls.Contains(tabCadastro)) tbcPrincipal.TabPages.Add(tabCadastro);
+
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabCliente" + (tbcCadastro.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Cliente";
+            tp.Padding = tabCadastro.Padding;
+            tbcCadastro.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabCadastroFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabCadastro;
+            tbcCadastro.SelectedTab = tp;
         }
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
-        }
+            if (!tbcPrincipal.Controls.Contains(tabCadastro)) tbcPrincipal.TabPages.Add(tabCadastro);
 
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabProduto" + (tbcCadastro.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Produto";
+            tp.Padding = tabCadastro.Padding;
+            tbcCadastro.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabCadastroFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabCadastro;
+            tbcCadastro.SelectedTab = tp;
+        }
+        private void tabCadastroFechada(object sender, FormClosedEventArgs e)
+        {
+            TabPage currentTab = tbcCadastro.SelectedTab;
+            tbcCadastro.TabPages.Remove(currentTab);
+            if (tbcCadastro.TabPages.Count == 0) tbcPrincipal.TabPages.Remove(tabCadastro);
+        }
+        private void tabControleAcessoFechada(object sender, FormClosedEventArgs e)
+        {
+            TabPage currentTab = tbcControleAcesso.SelectedTab;
+            tbcControleAcesso.TabPages.Remove(currentTab);
+            if (tbcControleAcesso.TabPages.Count == 0) tbcPrincipal.TabPages.Remove(tabControleAcesso);
+        }
+        private void tabRelatoriosFechada(object sender, FormClosedEventArgs e)
+        {
+            TabPage currentTab = tbcRelatorios.SelectedTab;
+            tbcRelatorios.TabPages.Remove(currentTab);
+            if (tbcRelatorios.TabPages.Count == 0) tbcPrincipal.TabPages.Remove(tabRelatorios);
+        }
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
+            if (!tbcPrincipal.Controls.Contains(tabControleAcesso)) tbcPrincipal.TabPages.Add(tabControleAcesso);
+
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabUsuario" + (tbcControleAcesso.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Usuario";
+            tp.Padding = tabControleAcesso.Padding;
+            tbcControleAcesso.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabControleAcessoFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabControleAcesso;
+            tbcControleAcesso.SelectedTab = tp;
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
+            if (!tbcPrincipal.Controls.Contains(tabControleAcesso)) tbcPrincipal.TabPages.Add(tabControleAcesso);
+
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabPerfil" + (tbcControleAcesso.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Perfil";
+            tp.Padding = tabControleAcesso.Padding;
+            tbcControleAcesso.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabControleAcessoFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabControleAcesso;
+            tbcControleAcesso.SelectedTab = tp;
         }
 
         private void btnPermissoes_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
+            if (!tbcPrincipal.Controls.Contains(tabControleAcesso)) tbcPrincipal.TabPages.Add(tabControleAcesso);
+
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabPermissoes" + (tbcControleAcesso.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Permissoes";
+            tp.Padding = tabControleAcesso.Padding;
+            tbcControleAcesso.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabControleAcessoFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabControleAcesso;
+            tbcControleAcesso.SelectedTab = tp;
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
+            if (!tbcPrincipal.Controls.Contains(tabRelatorios)) tbcPrincipal.TabPages.Add(tabRelatorios);
+
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabEstoque" + (tbcCadastro.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Estoque";
+            tp.Padding = tabRelatorios.Padding;
+            tbcRelatorios.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabRelatoriosFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabRelatorios;
+            tbcRelatorios.SelectedTab = tp;
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
             esconderSubMenu();
+            if (!tbcPrincipal.Controls.Contains(tabRelatorios)) tbcPrincipal.TabPages.Add(tabRelatorios);
+
+            MetroFramework.Controls.MetroTabPage tp = new MetroFramework.Controls.MetroTabPage();
+            string title = "tabVendas" + (tbcCadastro.TabCount + 1).ToString();
+            tp.Name = title;
+            tp.Text = "Vendas";
+            tp.Padding = tabRelatorios.Padding;
+            tbcRelatorios.TabPages.Add(tp);
+            fCadCliente frm = new fCadCliente();
+            frm.FormClosed += tabRelatoriosFechada;
+            frm.TopLevel = false;
+            tp.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+
+            tbcPrincipal.SelectedTab = tabRelatorios;
+            tbcRelatorios.SelectedTab = tp;
         }
 
         private void btnSair_Click(object sender, EventArgs e)
